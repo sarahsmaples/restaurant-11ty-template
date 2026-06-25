@@ -1,0 +1,170 @@
+---
+title: Private Parties & Event Catering Near Hudson Yards | Nittis Italian Restaurant | NYC
+description: Host your next private party, corporate event, or catered gathering at Nittis Italian Restaurant & Bar — steps from Hudson Yards, Times Square & Madison Square Garden.
+keywords: private parties NYC, event catering Hudson Yards, private dining Hell's Kitchen, corporate events Midtown Manhattan, Italian catering NYC, private party restaurant NYC
+permalink: /private-parties-and-event-catering-near-hudson-yards/
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+  <div class="relative" style="background-image: url('{{ "/assets/images/bg-marble.jpg" | url }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="absolute inset-0 bg-n-black/70"></div>
+
+    <div class="relative z-10 max-w-screen-lg mx-auto px-6 py-24">
+
+      {# ── Hero blurb ───────────────────────────────────────────────── #}
+      <div class="text-center mb-16">
+        <span class="section-label">Private Dining &amp; Catering</span>
+        <h1 class="section-heading">NYC's Conference District<br>Runs on Italian Food</h1>
+        <div class="section-rule"></div>
+        <p class="text-n-warm/75 text-xl leading-relaxed max-w-2xl mx-auto mb-10">The Javits Center is two blocks away. Hudson Yards is around the corner. Salesforce, Google, and every major conference in Midtown Manhattan ends up needing somewhere to feed a team — let that somewhere be Nittis. We've hosted corporate dinners, rehearsal parties, birthday celebrations, and holiday blowouts. We'll make yours look effortless.</p>
+        <a href="#inquiry-form" class="btn-red">Start Planning Your Event</a>
+
+        {# ── Trusted by ─────────────────────────────────────────────── #}
+        <div class="mt-12">
+          <p class="text-n-warm/50 text-sm tracking-[0.35em] uppercase text-center mb-8">Trusted By</p>
+          <div class="grid grid-cols-4 md:grid-cols-8 gap-6 items-center mb-8">
+            <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="Salesforce" class="h-8 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity">
+            <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="Deloitte" class="h-8 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity">
+            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="Disney" class="h-8 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity">
+            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="Pfizer" class="h-8 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity">
+            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="CNN" class="h-8 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity">
+            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="Warner Bros." class="h-8 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity">
+            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="Bombas" class="h-8 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity">
+            <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="Betterment" class="h-8 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity">
+          </div>
+
+          {# Expandable full list #}
+          <div id="all-companies" class="hidden text-left border-t border-n-gold/20 pt-8 mt-2">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3">
+              <p class="text-n-warm/70 text-sm">The HWP Group</p>
+              <p class="text-n-warm/70 text-sm">UCLA College Social Services</p>
+              <p class="text-n-warm/70 text-sm">Structure Tone</p>
+              <p class="text-n-warm/70 text-sm">Braeburn</p>
+              <p class="text-n-warm/70 text-sm">Salesforce</p>
+              <p class="text-n-warm/70 text-sm">Pfizer</p>
+              <p class="text-n-warm/70 text-sm">CRE Exchange</p>
+              <p class="text-n-warm/70 text-sm">United Refrigeration</p>
+              <p class="text-n-warm/70 text-sm">Mercy Home Heroes</p>
+              <p class="text-n-warm/70 text-sm">Automate Pro</p>
+              <p class="text-n-warm/70 text-sm">Levin Luxury Branding</p>
+              <p class="text-n-warm/70 text-sm">Deloitte</p>
+              <p class="text-n-warm/70 text-sm">Ohouse</p>
+              <p class="text-n-warm/70 text-sm">Decision Point Technologies</p>
+              <p class="text-n-warm/70 text-sm">Action for Healthy Kids</p>
+              <p class="text-n-warm/70 text-sm">CNN</p>
+              <p class="text-n-warm/70 text-sm">Warner Bros.</p>
+              <p class="text-n-warm/70 text-sm">Disney</p>
+              <p class="text-n-warm/70 text-sm">SA Hudson Yards Schools</p>
+              <p class="text-n-warm/70 text-sm">See Forever Foundation</p>
+              <p class="text-n-warm/70 text-sm">Wiz</p>
+              <p class="text-n-warm/70 text-sm">Black Innovation Alliance</p>
+              <p class="text-n-warm/70 text-sm">The Sidney Hillman Foundation</p>
+              <p class="text-n-warm/70 text-sm">Bombas</p>
+              <p class="text-n-warm/70 text-sm">Betterment</p>
+              <p class="text-n-warm/70 text-sm">ES Originals Inc.</p>
+              <p class="text-n-warm/70 text-sm">Eagle Eye Network</p>
+            </div>
+          </div>
+
+          <button id="toggle-companies" class="mt-6 text-n-red hover:text-n-cream text-sm tracking-[0.2em] uppercase transition-colors border-b border-n-red/40 pb-px">
+            See more ↓
+          </button>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var btn = document.getElementById('toggle-companies');
+          var list = document.getElementById('all-companies');
+          var open = false;
+          btn.addEventListener('click', function () {
+            open = !open;
+            list.classList.toggle('hidden', !open);
+            btn.textContent = open ? 'See less ↑' : 'See more ↓';
+          });
+        })();
+      </script>
+
+      {# ── Venue highlights strip ───────────────────────────────────── #}
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+
+        <div class="border border-n-gold/30 px-6 py-8 text-center space-y-3" style="background: rgba(10,10,10,0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+          <svg class="w-7 h-7 text-n-red mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+          <p class="font-eurostile text-3xl text-n-cream">Up to 200</p>
+          <p class="text-n-warm/60 text-base">90 seated &middot; 200 cocktail</p>
+        </div>
+
+        <div class="border border-n-gold/30 px-6 py-8 text-center space-y-3" style="background: rgba(10,10,10,0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+          <svg class="w-7 h-7 text-n-red mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
+          <p class="font-eurostile text-3xl text-n-cream">Custom</p>
+          <p class="text-n-warm/60 text-base">Menus &amp; Packages</p>
+        </div>
+
+        <div class="border border-n-gold/30 px-6 py-8 text-center space-y-3" style="background: rgba(10,10,10,0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+          <svg class="w-7 h-7 text-n-red mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 001.357 2.059l.094.035a2.25 2.25 0 001.872-.438l.677-.677m-8.906 8.906l.005-.005m4.044-4.044l.005-.005M9 12.75l1.5 1.5m0 0l1.5-1.5m-1.5 1.5V8.25M15 12l-3 3m0 0l-3-3m3 3V8.25"/></svg>
+          <p class="font-eurostile text-3xl text-n-cream">Full Bar</p>
+          <p class="text-n-warm/60 text-base">Craft Cocktails &amp; Wine</p>
+        </div>
+
+        <div class="border border-n-gold/30 px-6 py-8 text-center space-y-3" style="background: rgba(10,10,10,0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+          <svg class="w-7 h-7 text-n-red mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          <p class="font-eurostile text-3xl text-n-cream">2 Blocks</p>
+          <p class="text-n-warm/60 text-base">From Javits Center</p>
+        </div>
+
+      </div>
+
+      {# ── Event types ──────────────────────────────────────────────── #}
+      <div class="mb-16">
+        <h2 class="font-eurostile text-4xl md:text-5xl text-n-cream text-center mb-10">Perfect For Every Occasion</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+          <div class="border-l-2 border-n-red pl-5 py-1 space-y-1">
+            <p class="font-sans font-semibold text-xl text-n-cream">Corporate Dinners</p>
+            <p class="text-n-warm/60 text-base">Client entertaining, team dinners, post-conference meals</p>
+          </div>
+          <div class="border-l-2 border-n-red pl-5 py-1 space-y-1">
+            <p class="font-sans font-semibold text-xl text-n-cream">Conference Groups</p>
+            <p class="text-n-warm/60 text-base">Javits Center, Hudson Yards, and Midtown overflow dining</p>
+          </div>
+          <div class="border-l-2 border-n-red pl-5 py-1 space-y-1">
+            <p class="font-sans font-semibold text-xl text-n-cream">Holiday Parties</p>
+            <p class="text-n-warm/60 text-base">Company celebrations with custom menus and open bar options</p>
+          </div>
+          <div class="border-l-2 border-n-red pl-5 py-1 space-y-1">
+            <p class="font-sans font-semibold text-xl text-n-cream">Birthday Parties</p>
+            <p class="text-n-warm/60 text-base">Milestone birthdays with a private dining feel</p>
+          </div>
+          <div class="border-l-2 border-n-red pl-5 py-1 space-y-1">
+            <p class="font-sans font-semibold text-xl text-n-cream">Rehearsal Dinners</p>
+            <p class="text-n-warm/60 text-base">An intimate Italian setting for the night before the big day</p>
+          </div>
+          <div class="border-l-2 border-n-red pl-5 py-1 space-y-1">
+            <p class="font-sans font-semibold text-xl text-n-cream">Private Celebrations</p>
+            <p class="text-n-warm/60 text-base">Anniversaries, promotions, reunions — any reason to celebrate</p>
+          </div>
+
+        </div>
+      </div>
+
+      {# ── Interior photo ───────────────────────────────────────────── #}
+      <div class="mb-16">
+        <img src="{{ "/assets/images/private-dining-thumbnail.jpg" | url }}" alt="Private dining room at Nittis Italian Restaurant, Hell's Kitchen NYC" class="w-full h-auto block">
+      </div>
+
+      {# ── Form card ────────────────────────────────────────────────── #}
+      <div id="inquiry-form" class="text-center mb-10">
+        <h2 class="font-eurostile text-4xl md:text-5xl text-n-cream mb-4">Tell Us About Your Event</h2>
+        <p class="text-n-warm/60 text-lg">Fill out the form below and our events team will get back to you within 24 hours.</p>
+      </div>
+      <div class="border border-n-gold/30 px-8 py-10 md:px-14 md:py-14" style="background: rgba(10,10,10,0.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+        <iframe src="https://88restaurants.com/825/party_inquiry_forms" frameborder="0" width="100%" height="565" scrolling="no" style="border-radius: 4px; display: block;"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

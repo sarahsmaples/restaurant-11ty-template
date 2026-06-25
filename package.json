@@ -5,6 +5,7 @@
   "scripts": {
     "build:css": "postcss src/assets/sass/styles.scss -o src/assets/css/styles.css",
     "build": "npm run build:css && eleventy",
+    "build:preview": "npm run build:css && PATH_PREFIX=/nittis/ eleventy",
     "serve": "npm run build:css && eleventy --serve",
     "watch:css": "postcss src/assets/sass/styles.scss -o src/assets/css/styles.css --watch",
     "watch": "npm-run-all --parallel watch:css serve"
@@ -14,10 +15,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
-    "@sherby/eleventy-plugin-files-minifier": "^1.1.1",
     "autoprefixer": "^10.4.20",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.42",

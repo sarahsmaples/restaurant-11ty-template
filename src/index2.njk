@@ -1,0 +1,407 @@
+---
+title: Nittis Italian Restaurant & Bar | Hell's Kitchen, NYC
+description: Authentic Italian cuisine and craft cocktails in the heart of Hell's Kitchen, NYC. Steps from Times Square, Broadway & Madison Square Garden. Make a reservation today.
+keywords: Italian restaurant Hell's Kitchen, best Italian restaurant Midtown Manhattan, NYC Italian food, pasta near Times Square, craft cocktails Hell's Kitchen, Nittis NYC
+permalink: /
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+  {# ── Hero ──────────────────────────────────────────────────────── #}
+  <div id="hero-wrapper" style="height: 300vh; margin-top: -5rem;">
+    <section id="hero-scroll-container" class="sticky top-0 z-[1] flex items-center justify-center overflow-hidden h-screen" style="background-image: url('{{ "/assets/images/hero-background.jpg" | url }}'); background-size: cover; background-position: center;">
+
+      <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+        <div id="hero-logo-wrap" style="transform-origin: center center; will-change: transform;">
+          <img src="{{ "/assets/images/logo-full.png" | url }}" alt="{{ client.name }}" class="mx-auto h-36 md:h-52 w-auto mb-6">
+          <img src="{{ "/assets/images/smear.png" | url }}" alt="" aria-hidden="true" class="mx-auto w-48 md:w-64 h-auto mb-10">
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center mb-8">
+          <a href="https://order.nittisnyc.com/nittis-italian-restaurant-new-york-city-ny/online_orders/new" target="_blank" rel="noopener noreferrer" class="btn-red">Order Online</a>
+          <a href="{{ "/#reservations" | url }}" class="btn-outline !text-n-black !border-n-black/30 hover:!text-n-red hover:!border-n-red">Make a Reservation</a>
+        </div>
+
+        <address class="not-italic text-center text-n-black text-xl leading-relaxed space-y-1">
+          <p>523 9th Avenue, New York, 10018</p>
+          <p>Phone: <a href="tel:+12125170939" class="hover:text-n-red transition-colors">(212) 517-0939</a></p>
+        </address>
+      </div>
+
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      var logoWrap = document.getElementById('hero-logo-wrap');
+
+      function onScroll() {
+        var scrolled = window.scrollY;
+        var total = window.innerHeight; // shrink completes after 1 viewport of scroll, then holds
+        var progress = Math.min(Math.max(scrolled / total, 0), 1);
+        var scale = 1 - (progress * 0.45);
+        logoWrap.style.transform = 'scale(' + scale + ')';
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
+  {# ── View Menu ─────────────────────────────────────────────────── #}
+  <section id="view-menu" class="stack-panel sticky top-0 z-[11] bg-n-black overflow-hidden rounded-t-[20px]" style="margin-top: -100vh; min-height: 250vh; background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
+
+    {# Left gallery column — auto-scrolls upward continuously #}
+    <div class="hidden md:flex flex-col absolute left-0 top-0 w-[26%] pointer-events-none" aria-hidden="true"
+      style="will-change:transform; animation: gallery-up 22s linear infinite; mask-image: linear-gradient(to right,black 65%,transparent 100%); -webkit-mask-image: linear-gradient(to right,black 65%,transparent 100%);">
+      <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+    </div>
+
+    {# Right gallery column — auto-scrolls downward continuously (opposite direction) #}
+    <div class="hidden md:flex flex-col absolute right-0 top-0 w-[26%] pointer-events-none" aria-hidden="true"
+      style="will-change:transform; animation: gallery-down 28s linear infinite; mask-image: linear-gradient(to left,black 65%,transparent 100%); -webkit-mask-image: linear-gradient(to left,black 65%,transparent 100%);">
+      <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+    </div>
+
+    {# Gradient overlays — fixed relative to section so fade stays at viewport edges as images animate #}
+    <div class="hidden md:block absolute left-0 top-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="background: linear-gradient(to bottom, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute left-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute right-0 top-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="background: linear-gradient(to bottom, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute right-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
+
+    {# Centered text + mobile image strips #}
+    <div class="relative z-[2] h-screen flex flex-col text-center">
+
+      {# Mobile: top food image strip — hidden on desktop where vertical galleries show #}
+      <div class="md:hidden overflow-hidden flex-shrink-0" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+        <div class="flex gap-2 items-center" style="width: max-content; animation: marquee 18s linear infinite;">
+          <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+        </div>
+      </div>
+
+      {# Text — grows to fill remaining space and self-centers #}
+      <div class="flex-1 flex flex-col items-center justify-center px-6">
+        <span class="section-label">Authentic Italian Cuisine</span>
+        <h2 class="font-eurostile text-4xl md:text-7xl text-n-cream uppercase tracking-[0.3em] md:whitespace-nowrap max-w-[90%] mx-auto mb-6">Our Passion</h2>
+        <p class="text-n-warm/80 text-lg leading-relaxed mb-10 max-w-xl mx-auto">From hand-rolled pasta and wood-fired pizza to fresh seafood and classic Italian desserts — every dish is prepared with the finest ingredients and a commitment to authentic flavor.</p>
+        <a href="{{ "/menu/" | url }}" class="btn-red">View Our Menu</a>
+      </div>
+
+      {# Mobile: bottom food image strip, scrolls in opposite direction #}
+      <div class="md:hidden overflow-hidden flex-shrink-0" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+        <div class="flex gap-2 items-center" style="width: max-content; animation: marquee 22s linear 0s infinite reverse;">
+          <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  {# ── Private Events ────────────────────────────────────────────── #}
+  <section id="private-events" class="stack-panel sticky top-0 z-[12] overflow-hidden rounded-t-[20px] min-h-[200vh]" style="background-image: url('{{ "/assets/images/bg-marble.jpg" | url }}'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-n-black/70"></div>
+    <div class="relative z-10 h-screen flex flex-col items-center justify-center text-center px-6">
+
+      <span class="section-label">Host Your Event</span>
+      <h2 class="section-heading">Private Dining &amp; Events</h2>
+      <div class="section-rule"></div>
+      <p class="text-n-warm/75 text-lg max-w-2xl mx-auto mb-10">Hell's Kitchen's go-to for corporate dinners, conferences, and private celebrations. Steps from the Javits Center &amp; Hudson Yards. Up to 90 seated &middot; 200 cocktail.</p>
+      <a href="{{ "/private-parties-and-event-catering-near-hudson-yards/" | url }}" class="btn-red text-base px-14 py-4">Plan Your Event</a>
+
+      {# Trusted By logo marquee #}
+      <div class="mt-14 w-full">
+        <p class="text-n-warm/40 text-xs tracking-[0.35em] uppercase mb-5">Trusted By</p>
+        <div class="overflow-hidden" style="mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
+          <div class="logo-marquee flex gap-16 items-center" style="width: max-content; animation: marquee 28s linear infinite;">
+            <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="Salesforce" class="h-10 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="Deloitte" class="h-10 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="Disney" class="h-10 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="Pfizer" class="h-10 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="CNN" class="h-10 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="Warner Bros." class="h-10 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="Bombas" class="h-10 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="Betterment" class="h-10 w-auto object-contain opacity-50">
+            {# Duplicate set for seamless loop #}
+            <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="Salesforce" class="h-10 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="Deloitte" class="h-10 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="Disney" class="h-10 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="Pfizer" class="h-10 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="CNN" class="h-10 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="Warner Bros." class="h-10 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="Bombas" class="h-10 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="Betterment" class="h-10 w-auto object-contain opacity-50" aria-hidden="true">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {# ── About ──────────────────────────────────────────────────────── #}
+  <section id="about" class="stack-panel sticky top-0 z-[13] bg-n-black overflow-hidden rounded-t-[20px] min-h-[200vh]" style="background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
+
+    {# Left gallery column — owners + cigarette-machine, scroll-driven, drifts upward #}
+    <div id="about-col-left" class="hidden md:flex flex-col justify-end gap-3 absolute left-0 top-0 w-[30%] h-screen pointer-events-none" aria-hidden="true"
+      style="will-change: transform;">
+      <img src="{{ "/assets/images/owners.jpg" | url }}" alt="" class="w-full h-auto flex-shrink-0">
+      <img src="{{ "/assets/images/cigarette-machine.jpg" | url }}" alt="" class="w-[60%] h-auto flex-shrink-0 self-end">
+    </div>
+
+    {# Right gallery column — the-man + exterior2, scroll-driven, drifts downward #}
+    <div id="about-col-right" class="hidden md:flex flex-col gap-3 absolute right-0 top-0 w-[27%] pointer-events-none" aria-hidden="true"
+      style="will-change: transform;">
+      <img src="{{ "/assets/images/the-man.jpg" | url }}" alt="" class="w-full h-auto flex-shrink-0">
+      <img src="{{ "/assets/images/exterior2.jpg" | url }}" alt="" class="w-[85%] h-auto flex-shrink-0 self-start">
+    </div>
+
+    {# Gradient overlays — pinned at viewport edges #}
+    <div class="hidden md:block absolute left-0 top-0 w-[30%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="background: linear-gradient(to bottom, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute left-0 w-[30%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute right-0 top-0 w-[27%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="background: linear-gradient(to bottom, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute right-0 w-[27%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
+
+    {# Centered content #}
+    <div class="relative z-[2] h-screen flex flex-col items-center justify-center text-center px-6">
+      <div class="max-w-xl mx-auto space-y-6">
+        <h2 class="font-eurostile text-4xl md:text-6xl text-n-cream uppercase tracking-[0.2em]">Our Story</h2>
+        <div class="section-rule"></div>
+        <p class="text-n-warm/75 text-lg leading-relaxed">A family legacy rooted in authenticity. Nittis is a Durollari family venture built on 38 years of Italian restaurant tradition — from Father Will's dedication to the craft, to sons Arben &amp; Kuj bringing the same eye for style that dressed Billie Eilish and Lil Nas X to the atmosphere at Nittis.</p>
+        <p class="text-n-warm/75 text-lg leading-relaxed">Perfectly situated in Hell's Kitchen, steps from Times Square, the Javits Center, and Madison Square Garden — where great food, warm hospitality, and genuine Italian spirit meet.</p>
+        <a href="{{ "/#reservations" | url }}" class="btn-red inline-block mt-2">Reserve a Table</a>
+        <div class="md:hidden mt-8">
+          <img src="{{ "/assets/images/owners.jpg" | url }}" alt="The Owners" class="w-full h-auto rounded-sm">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+  (function () {
+    var section = document.getElementById('about');
+    var colLeft  = document.getElementById('about-col-left');
+    var colRight = document.getElementById('about-col-right');
+    if (!section || !colLeft || !colRight) return;
+
+    var sectionTop = 0;
+
+    function recalc() {
+      sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      update();
+    }
+
+    function update() {
+      var progress = Math.max(0, window.scrollY - sectionTop);
+      colLeft.style.transform  = 'translateY(' + (-progress * 0.1) + 'px)';
+      colRight.style.transform = 'translateY(' + (progress * 0.1) + 'px)';
+    }
+
+    document.addEventListener('DOMContentLoaded', recalc);
+    window.addEventListener('load', recalc);
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', recalc);
+  })();
+  </script>
+
+  {# ── Reviews ───────────────────────────────────────────────────── #}
+  <section id="reviews" class="stack-panel sticky top-0 z-[14] py-20 overflow-hidden rounded-t-[20px] min-h-screen" style="background-image: url('{{ "/assets/images/bg-marble.jpg" | url }}'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-n-black/60"></div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <span class="section-label">Guest Reviews</span>
+      <h2 class="section-heading">What Our Guests Say</h2>
+      <div class="section-rule"></div>
+
+      {# Sliding carousel — all cards in one track, 3 visible at a time #}
+      <div id="reviews-carousel" class="overflow-hidden">
+        <div id="reviews-track" class="flex" style="transition: transform 0.5s ease-in-out;">
+          {% for review in reviews %}
+            <div class="w-full md:w-1/3 flex-shrink-0 px-3 text-left">
+              <div class="border border-n-gold/30 px-8 py-8 h-full space-y-5" style="background: rgba(10,10,10,0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+                <p class="text-n-warm/85 text-base leading-relaxed">&ldquo;{{ review.text }}&rdquo;</p>
+                <div class="pt-4 border-t border-n-gold/20">
+                  {% if review.url %}
+                    <a href="{{ review.url }}" target="_blank" rel="noopener noreferrer" class="text-n-red hover:text-n-cream text-sm font-semibold tracking-wide transition-colors">&mdash; {{ review.name }}</a>
+                  {% else %}
+                    <p class="text-n-red text-sm font-semibold tracking-wide">&mdash; {{ review.name }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {# Navigation #}
+      <div class="flex items-center justify-center gap-8 mt-10">
+        <button id="reviews-prev" aria-label="Previous review" class="w-10 h-10 border border-n-gold/30 flex items-center justify-center text-n-cream hover:border-n-red hover:text-n-red transition-colors" style="background: rgba(10,10,10,0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="flex gap-3 items-center">
+          {% for i in range(0, reviews | length - 2) %}
+            <button class="reviews-dot relative flex items-center justify-center w-11 h-11 transition-colors" data-index="{{ loop.index0 }}" aria-label="Go to position {{ loop.index }}">
+              <span class="block w-2 h-2 rounded-full transition-colors {% if loop.first %}bg-n-red{% else %}bg-n-muted{% endif %}"></span>
+            </button>
+          {% endfor %}
+        </div>
+        <button id="reviews-next" aria-label="Next review" class="w-10 h-10 border border-n-gold/30 flex items-center justify-center text-n-cream hover:border-n-red hover:text-n-red transition-colors" style="background: rgba(10,10,10,0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var carousel = document.getElementById('reviews-carousel');
+      var track = document.getElementById('reviews-track');
+      var dots = document.querySelectorAll('.reviews-dot');
+      var total = track.children.length;
+      var current = 0;
+
+      function getVisible() { return window.innerWidth >= 768 ? 3 : 1; }
+      function getMax() { return total - getVisible(); }
+
+      function goTo(index) {
+        var max = getMax();
+        current = ((index % (max + 1)) + (max + 1)) % (max + 1);
+        var cardWidth = carousel.offsetWidth / getVisible();
+        track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+        dots.forEach(function (dot, i) {
+          var span = dot.querySelector('span');
+          span.classList.toggle('bg-n-red', i === current);
+          span.classList.toggle('bg-n-muted', i !== current);
+        });
+      }
+
+      document.getElementById('reviews-prev').addEventListener('click', function () { goTo(current - 1); });
+      document.getElementById('reviews-next').addEventListener('click', function () { goTo(current + 1); });
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () { goTo(parseInt(dot.dataset.index)); });
+      });
+      window.addEventListener('resize', function () { goTo(Math.min(current, getMax())); });
+    })();
+  </script>
+
+
+  {# ── Reservations ──────────────────────────────────────────────── #}
+  <section id="reservations" class="stack-panel sticky top-0 z-[15] overflow-hidden rounded-t-[20px] min-h-screen" style="background-image: url('{{ "/assets/images/reservation-thumbnail.jpg" | url }}'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-n-black/60"></div>
+    <div class="relative z-10 py-20 px-6">
+      <div class="mx-auto" style="max-width: 900px;">
+
+        <div class="border border-n-gold/30 p-8 md:p-14 grid md:grid-cols-2 gap-12 items-center" style="background: rgba(10,10,10,0.65); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);">
+
+          {# Left: blurb #}
+          <div>
+            <span class="section-label">Book Your Table</span>
+            <h2 class="section-heading text-left">Reservations</h2>
+            <div class="w-10 h-px bg-n-red mt-5 mb-10"></div>
+            <p class="hidden md:block text-white text-lg leading-relaxed mb-6">Whether you're planning a special occasion or a night out, we'd love to have you. Use the widget to reserve your seat for parties of up to 10.</p>
+            <p class="hidden md:block text-white text-lg leading-relaxed">Planning something bigger? Visit our <a href="{{ "/private-parties-and-event-catering-near-hudson-yards/" | url }}" class="text-n-red hover:text-n-cream transition-colors border-b border-n-red/40 pb-px">Events &amp; Private Dining</a> page to submit a group inquiry.</p>
+            <p class="md:hidden text-white text-lg leading-relaxed">Reserve your table below, or visit our <a href="{{ "/private-parties-and-event-catering-near-hudson-yards/" | url }}" class="text-n-red hover:text-n-cream transition-colors border-b border-n-red/40 pb-px">Events &amp; Private Dining</a> page if you're planning a large gathering.</p>
+          </div>
+
+          {# Right: widget #}
+          <div class="flex justify-center">
+            <div class="border border-n-gold/30" style="background: rgba(10,10,10,0.92);">
+              <iframe id="widget" width="300" height="442" src="https://88restaurants.com/nittis-italian-restaurant-new-york-city-ny/widgets/322" style="border: none; background: none; display: block;"></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {# ── Gift Cards ────────────────────────────────────────────────── #}
+  <section id="gift-cards" class="stack-panel sticky top-0 z-[16] bg-n-black overflow-hidden rounded-t-[20px] min-h-screen flex items-center" style="background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
+    <div class="max-w-screen-xl mx-auto px-6 py-20 w-full">
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+
+        <a href="https://88restaurants.com/825/gift_cards/new" target="_blank" rel="noopener noreferrer" class="group hidden md:block">
+          <img src="{{ "/assets/images/gift-card.png" | url }}" alt="Nittis Italian Restaurant Gift Card" class="w-full max-w-sm mx-auto transition-transform duration-500 group-hover:scale-105">
+        </a>
+
+        <div class="space-y-6">
+          <span class="section-label">For Any Occasion</span>
+          <h2 class="section-heading">Gift Cards</h2>
+          <div class="w-10 h-px bg-n-red mt-5 mb-2"></div>
+          <p class="text-n-warm/75 text-lg leading-relaxed">Give the gift of an unforgettable Italian dining experience. Nittis gift cards are perfect for birthdays, anniversaries, corporate gifts, or any occasion worth celebrating — redeemable for food, drinks, and more.</p>
+          <a href="https://88restaurants.com/825/gift_cards/new" target="_blank" rel="noopener noreferrer" class="btn-red inline-block">Purchase a Gift Card</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# ── Contact ───────────────────────────────────────────────────── #}
+  <section id="contact" class="stack-panel sticky top-0 z-[17] bg-n-black pt-20 pb-0 rounded-t-[20px]">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+
+        {# Left: heading + hours + address #}
+        <div class="pb-20">
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-heading">Contact Us</h2>
+          <div class="w-10 h-px bg-n-red mt-5 mb-12"></div>
+
+          <h3 class="font-eurostile text-3xl text-n-cream mb-6">Hours of Operation</h3>
+          <ul class="mb-10">
+            {% for slot in client.hours %}
+              <li class="flex justify-between items-center py-4 border-b border-n-border last:border-0">
+                <span class="text-n-warm text-base">{{ slot.days }}</span>
+                <span class="text-n-red font-semibold text-base">{{ slot.hours }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+
+          <address class="not-italic text-n-warm/60 text-base space-y-1">
+            <p>{{ client.address.street }}</p>
+            <p>{{ client.address.neighborhood }}, {{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}</p>
+            <p class="mt-4"><a href="tel:{{ client.phone }}" class="hover:text-n-red transition-colors">{{ client.phone }}</a></p>
+          </address>
+          <a href="{{ client.googleMapsUrl }}" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 text-n-red hover:text-n-cream text-sm tracking-[0.2em] uppercase transition-colors border-b border-n-red/40 pb-px">Get Directions &rarr;</a>
+        </div>
+
+        {# Right: contact form hanging into footer #}
+        <div class="relative z-10 -mb-24">
+          <iframe src="https://88restaurants.com/nittis-italian-restaurant-new-york-city-ny/contact_forms" frameborder="0" width="100%" height="545" scrolling="no" style="display: block; border-radius: 10px;"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

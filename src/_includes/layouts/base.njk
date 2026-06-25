@@ -5,31 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ description }}">
-    <meta name="keywords" content="">
+    <meta name="description" content="{{ description or 'Authentic Italian cuisine and craft cocktails in Hell\'s Kitchen, NYC. Steps from Times Square, Broadway & Madison Square Garden.' }}">
+    <meta name="keywords" content="{{ keywords or 'Italian restaurant NYC, Hell\'s Kitchen restaurant, Italian food New York, pasta NYC, craft cocktails Midtown Manhattan, Nittis' }}">
     <link rel="canonical" href="{{ client.domain }}{{ page.url }}">
 
     <!-- Social Media Display -->
     <meta property="og:title" content="{{ title }}"/>
-    <meta property="og:description" content="{{ description }}"/>
+    <meta property="og:description" content="{{ description or 'Authentic Italian cuisine and craft cocktails in Hell\'s Kitchen, NYC.' }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
     <meta property="og:image" content="{{ "/assets/images/og-image.webp" | url }}"/>
     <meta property="og:image:secure_url" content="{{ "/assets/images/og-image.webp" | url }}"/>
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicons/apple-touch-icon.png" | url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicons/favicon-32x32.png?v1" | url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicons/apple-icon.png" | url }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ "/assets/favicons/favicon-96x96.png" | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicons/favicon-32x32.png" | url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicons/favicon-16x16.png" | url }}">
-    <link rel="manifest" href="{{ "/assets/favicons/site.webmanifest" | url }}">
+    <link rel="manifest" href="{{ "/assets/favicons/manifest.json" | url }}">
+    <meta name="msapplication-TileImage" content="{{ "/assets/favicons/ms-icon-144x144.png" | url }}">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Sitewide Stylesheets and Scripts -->
     <link rel="stylesheet" href="{{ "/assets/css/styles.css" | url }}">
+    <link rel="stylesheet" href="https://use.typekit.net/maj2vob.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 
     {% block head %}{% endblock %}
 
@@ -38,28 +44,83 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "Restaurant",
         "name": "{{ client.name }}",
         "url": "{{ client.domain }}",
         "logo": "{{ client.domain }}/assets/images/logo.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "{{ client.phone }}",
-          "contactType": "Customer Service"
-        }
+        "image": "{{ client.domain }}/assets/images/og-image.webp",
+        "telephone": "{{ client.phone }}",
+        "hasMap": "{{ client.googleMapsUrl }}",
+        "servesCuisine": "Italian",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ client.address.street }}",
+          "addressLocality": "{{ client.address.city }}",
+          "addressRegion": "{{ client.address.state }}",
+          "postalCode": "{{ client.address.zip }}",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.7567203,
+          "longitude": -73.994156
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "16:00",
+            "closes": "23:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Friday", "Saturday"],
+            "opens": "12:00",
+            "closes": "23:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Sunday"],
+            "opens": "12:00",
+            "closes": "23:00"
+          }
+        ]
       }
     </script>
 
-    <!-- ADD GOOGLE ANALYTICS -->
+    <!-- Meta Pixel Code (lazy loaded) -->
+    <script>
+      window.addEventListener('load', function () {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1669102524227813');
+        fbq('track', 'PageView');
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1669102524227813&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
 
   </head>
 
-  <body>
+  <body class="bg-n-black text-n-cream">
     {% include "components/header.njk" %}
-    <main>
+    <main class="pt-20 pb-14 md:pb-0">
       {% block content %}{% endblock %}
     </main>
     {% include "components/footer.njk" %}
     <script src="{{ "/assets/js/main.js" | url }}"></script>
+
+    <!-- Mobile sticky CTA bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-n-border" style="background: rgba(10,10,10,0.97); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+      <a href="{{ "/#reservations" | url }}" class="flex-1 py-4 bg-n-red hover:bg-n-red-dark text-white text-xs tracking-[0.2em] uppercase font-semibold text-center transition-colors">Reservations</a>
+      <a href="https://order.nittisnyc.com/nittis-italian-restaurant-new-york-city-ny/online_orders/new" target="_blank" rel="noopener noreferrer" class="flex-1 py-4 text-n-cream/80 hover:text-n-red text-xs tracking-[0.2em] uppercase font-semibold text-center transition-colors border-l border-n-border">Order Online</a>
+    </div>
   </body>
 </html>

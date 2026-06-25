@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Billionaire';
+  src: url('../fonts/billionaire_2/BillionaireMediumGrunge.ttf') format('truetype'),
+       url('../fonts/billionaire_2/billionaire-medium-grunge.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-n-black text-n-cream antialiased;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-red {
+    @apply inline-block px-8 py-3 bg-n-red hover:bg-n-red-dark text-white text-sm tracking-[0.2em] uppercase font-semibold transition-all duration-300;
+  }
+  .btn-outline {
+    @apply inline-block px-8 py-3 border border-n-cream/25 hover:border-n-red hover:text-n-red text-n-cream/60 text-sm tracking-[0.2em] uppercase font-semibold transition-all duration-300;
+  }
+
+  /* Section heading pattern */
+  .section-label {
+    @apply block text-n-red text-sm tracking-[0.4em] uppercase font-semibold mb-3;
+  }
+  .section-heading {
+    @apply font-eurostile text-4xl md:text-6xl text-n-cream;
+  }
+  .section-rule {
+    @apply w-10 h-px bg-n-red mx-auto mt-5 mb-12;
+  }
+
+  /* Offset image frame accent */
+  .img-frame-right::after {
+    content: '';
+    @apply absolute inset-0 border border-n-red/20 pointer-events-none;
+    transform: translate(10px, 10px);
+  }
+  .img-frame-left::after {
+    content: '';
+    @apply absolute inset-0 border border-n-red/20 pointer-events-none;
+    transform: translate(-10px, 10px);
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes gallery-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+@keyframes gallery-down {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+
+/* Scroll-driven card stack panels */
+.stack-panel {
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.55);
+}

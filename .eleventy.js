@@ -1,5 +1,4 @@
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
-const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
@@ -9,7 +8,6 @@ module.exports = function (eleventyConfig) {
       hostname: "https://www.example.com", // Replace with your client's URL
     },
   });
-  eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   // Passthrough copy for assets
