@@ -10,7 +10,7 @@ permalink: /index3/
 {% block content %}
 
   {# ── Hero ──────────────────────────────────────────────────────── #}
-  <div id="hero-wrapper-v3" style="height: 300vh; margin-top: -5rem;">
+  <div id="hero-wrapper-v3" style="height: 200vh; margin-top: -5rem;">
     <section id="hero-scroll-container" class="sticky top-0 z-[1] flex items-center justify-center overflow-hidden h-screen">
 
       {# Video background #}
@@ -22,139 +22,15 @@ permalink: /index3/
       <div class="absolute inset-0 bg-black/50"></div>
 
       <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          <img src="{{ "/assets/images/logo-full.png" | url }}" alt="{{ client.name }}" class="mx-auto h-36 md:h-52 w-auto" style="filter: invert(1);">
+          <img src="{{ "/assets/images/logo-full.png" | url }}" alt="{{ client.name }}" class="mx-auto w-4/5 h-auto md:w-auto md:h-52" style="filter: invert(1);">
       </div>
 
     </section>
   </div>
 
   {# ── View Menu ─────────────────────────────────────────────────── #}
-  <section id="view-menu" class="stack-panel sticky top-0 z-[11] bg-n-black overflow-hidden rounded-t-[20px]" style="margin-top: -100vh; min-height: 150vh; background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
-
-    {# Left gallery column — auto-scrolls upward continuously #}
-    <div class="hidden md:flex flex-col absolute left-0 top-0 w-[26%] pointer-events-none" aria-hidden="true"
-      style="will-change:transform; animation: gallery-up 22s linear infinite; mask-image: linear-gradient(to right,black 65%,transparent 100%); -webkit-mask-image: linear-gradient(to right,black 65%,transparent 100%);">
-      <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-    </div>
-
-    {# Right gallery column — auto-scrolls downward continuously (opposite direction) #}
-    <div class="hidden md:flex flex-col absolute right-0 top-0 w-[26%] pointer-events-none" aria-hidden="true"
-      style="will-change:transform; animation: gallery-down 28s linear infinite; mask-image: linear-gradient(to left,black 65%,transparent 100%); -webkit-mask-image: linear-gradient(to left,black 65%,transparent 100%);">
-      <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-    </div>
-
-    {# Gradient overlays — fixed relative to section so fade stays at viewport edges as images animate #}
-    <div class="hidden md:block absolute left-0 top-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="background: linear-gradient(to bottom, #0a0a0a, transparent);"></div>
-    <div class="hidden md:block absolute left-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
-    <div class="hidden md:block absolute right-0 top-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="background: linear-gradient(to bottom, #0a0a0a, transparent);"></div>
-    <div class="hidden md:block absolute right-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
-
-    {# Centered text + mobile image strips #}
-    <div class="relative z-[2] h-screen flex flex-col text-center">
-
-      {# Mobile: top food image strip — hidden on desktop where vertical galleries show #}
-      <div class="md:hidden overflow-hidden flex-shrink-0" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-        <div class="flex gap-2 items-center" style="width: max-content; animation: marquee 18s linear infinite;">
-          <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-        </div>
-      </div>
-
-      {# Text — grows to fill remaining space and self-centers #}
-      <div class="flex-1 flex flex-col items-center justify-center px-6">
-        <span class="section-label">Authentic Italian Cuisine</span>
-        <h2 class="font-eurostile text-4xl md:text-7xl text-n-cream uppercase tracking-[0.3em] md:whitespace-nowrap max-w-[90%] mx-auto mb-6">Our Passion</h2>
-        <p class="text-n-warm/80 text-lg leading-relaxed mb-10 max-w-xl mx-auto">From hand-rolled pasta and wood-fired pizza to fresh seafood and classic Italian desserts — every dish is prepared with the finest ingredients and a commitment to authentic flavor.</p>
-        <a href="{{ "/menu/" | url }}" class="btn-red">View Our Menu</a>
-      </div>
-
-      {# Mobile: bottom food image strip, scrolls in opposite direction #}
-      <div class="md:hidden overflow-hidden flex-shrink-0" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-        <div class="flex gap-2 items-center" style="width: max-content; animation: marquee 22s linear 0s infinite reverse;">
-          <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  {# ── Private Events ────────────────────────────────────────────── #}
-  <section id="private-events" class="relative z-[20] py-20" style="background-image: url('{{ "/assets/images/bg-marble.jpg" | url }}'); background-size: cover; background-position: center;">
-    <div class="absolute inset-0 bg-n-black/70"></div>
-    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
-
-      <span class="section-label">Host Your Event</span>
-      <h2 class="section-heading">Private Dining &amp; Events</h2>
-      <div class="section-rule"></div>
-
-      {# Photo + hanging content card #}
-      <div class="relative max-w-3xl mx-auto text-left md:pr-20">
-        <img src="{{ "/assets/images/private-dining-thumbnail.jpg" | url }}" alt="Private dining at Nittis Italian Restaurant" class="w-full h-auto block">
-        <div class="md:absolute md:bottom-0 md:right-0 border border-n-gold/30 p-8 space-y-5 md:w-80" style="background: #1a1212;">
-          <p class="text-white text-base leading-relaxed">Steps from the Javits Center, Hudson Yards, and Madison Square Garden — Nittis is Hell's Kitchen's go-to for corporate dinners, conference groups, and private celebrations. Up to 90 seated or 200 for cocktail hour. Fully customizable menus. We'll handle the rest.</p>
-          <a href="{{ "/private-parties-and-event-catering-near-hudson-yards/" | url }}" class="text-n-red hover:text-n-cream text-sm tracking-[0.2em] uppercase transition-colors border-b border-n-red/40 pb-px inline-block">Plan Your Event &rarr;</a>
-        </div>
-      </div>
-
-      {# Logo marquee #}
-      <div class="mt-14">
-        <p class="text-n-warm/40 text-xs tracking-[0.35em] uppercase text-center mb-6">Trusted By</p>
-        <div class="overflow-hidden" style="mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
-          <div class="logo-marquee flex gap-16 items-center" style="width: max-content; animation: marquee 28s linear infinite;">
-            <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="Salesforce" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="Deloitte" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="Disney" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="Pfizer" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="CNN" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="Warner Bros." class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="Bombas" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="Betterment" class="h-12 w-auto object-contain opacity-50">
-            {# Duplicate set for seamless loop #}
-            <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  {# ── About ──────────────────────────────────────────────────────── #}
-  <section id="about" class="relative z-[20] bg-n-black overflow-hidden min-h-screen" style="background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
+  {# ── About / Our Story — slides over hero as sticky card ─────────── #}
+  <section id="about" class="stack-panel sticky top-0 z-[11] bg-n-black overflow-hidden rounded-t-[20px]" style="margin-top: -100vh; min-height: 250vh; background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
 
     {# Left gallery column — owners + cigarette-machine, scroll-driven, drifts upward #}
     <div id="about-col-left" class="hidden md:flex flex-col justify-end gap-3 absolute left-0 top-0 w-[30%] h-screen pointer-events-none" aria-hidden="true"
@@ -207,8 +83,7 @@ permalink: /index3/
     }
 
     function update() {
-      var startScroll = sectionTop - window.innerHeight;
-      var progress = Math.max(0, window.scrollY - startScroll);
+      var progress = Math.max(0, window.scrollY - sectionTop);
       colLeft.style.transform  = 'translateY(' + (-progress * 0.25) + 'px)';
       colRight.style.transform = 'translateY(' + (progress * 0.25) + 'px)';
     }
@@ -219,6 +94,131 @@ permalink: /index3/
     window.addEventListener('resize', recalc);
   })();
   </script>
+
+  {# ── Private Events ────────────────────────────────────────────── #}
+  <section id="private-events" class="relative z-[20] py-20" style="background-image: url('{{ "/assets/images/bg-marble.jpg" | url }}'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-n-black/70"></div>
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+
+      <span class="section-label">Host Your Event</span>
+      <h2 class="section-heading">Private Dining &amp; Events</h2>
+      <div class="section-rule"></div>
+
+      {# Photo + hanging content card #}
+      <div class="relative max-w-3xl mx-auto text-left md:pr-20">
+        <img src="{{ "/assets/images/private-dining-thumbnail.jpg" | url }}" alt="Private dining at Nittis Italian Restaurant" class="w-full h-auto block">
+        <div class="md:absolute md:bottom-0 md:right-0 border border-n-gold/30 p-8 space-y-5 md:w-80" style="background: #1a1212;">
+          <p class="text-white text-base leading-relaxed">Steps from the Javits Center, Hudson Yards, and Madison Square Garden — Nittis is Hell's Kitchen's go-to for corporate dinners, conference groups, and private celebrations. Up to 90 seated or 200 for cocktail hour. Fully customizable menus. We'll handle the rest.</p>
+          <a href="{{ "/private-parties-and-event-catering-near-hudson-yards/" | url }}" class="text-n-red hover:text-n-cream text-sm tracking-[0.2em] uppercase transition-colors border-b border-n-red/40 pb-px inline-block">Plan Your Event &rarr;</a>
+        </div>
+      </div>
+
+      {# Logo marquee #}
+      <div class="mt-14">
+        <p class="text-n-warm/40 text-xs tracking-[0.35em] uppercase text-center mb-6">Trusted By</p>
+        <div class="overflow-hidden" style="mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
+          <div class="logo-marquee flex gap-16 items-center" style="width: max-content; animation: marquee 28s linear infinite;">
+            <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="Salesforce" class="h-12 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="Deloitte" class="h-12 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="Disney" class="h-12 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="Pfizer" class="h-12 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="CNN" class="h-12 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="Warner Bros." class="h-12 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="Bombas" class="h-12 w-auto object-contain opacity-50">
+            <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="Betterment" class="h-12 w-auto object-contain opacity-50">
+            {# Duplicate set for seamless loop #}
+            <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+            <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {# ── Our Passion ───────────────────────────────────────────────── #}
+  <section id="view-menu" class="relative z-[20] bg-n-black overflow-hidden" style="background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
+
+    {# Left gallery column — auto-scrolls upward continuously #}
+    <div class="hidden md:flex flex-col absolute left-0 top-0 w-[26%] pointer-events-none" aria-hidden="true"
+      style="will-change:transform; animation: gallery-up 22s linear infinite; mask-image: linear-gradient(to right,black 65%,transparent 100%); -webkit-mask-image: linear-gradient(to right,black 65%,transparent 100%);">
+      <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+    </div>
+
+    {# Right gallery column — auto-scrolls downward continuously (opposite direction) #}
+    <div class="hidden md:flex flex-col absolute right-0 top-0 w-[26%] pointer-events-none" aria-hidden="true"
+      style="will-change:transform; animation: gallery-down 28s linear infinite; mask-image: linear-gradient(to left,black 65%,transparent 100%); -webkit-mask-image: linear-gradient(to left,black 65%,transparent 100%);">
+      <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
+      <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+    </div>
+
+    {# Gradient overlays #}
+    <div class="hidden md:block absolute left-0 top-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="background: linear-gradient(to bottom, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute left-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute right-0 top-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="background: linear-gradient(to bottom, #0a0a0a, transparent);"></div>
+    <div class="hidden md:block absolute right-0 w-[26%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
+
+    {# Centered text + mobile image strips #}
+    <div class="relative z-[2] h-screen flex flex-col text-center">
+
+      {# Mobile: top food image strip #}
+      <div class="md:hidden overflow-hidden flex-shrink-0" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+        <div class="flex gap-2 items-center" style="width: max-content; animation: marquee 18s linear infinite;">
+          <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+        </div>
+      </div>
+
+      {# Text #}
+      <div class="flex-1 flex flex-col items-center justify-center px-6">
+        <span class="section-label">Authentic Italian Cuisine</span>
+        <h2 class="font-eurostile text-4xl md:text-7xl text-n-cream uppercase tracking-[0.3em] md:whitespace-nowrap max-w-[90%] mx-auto mb-6">Our Passion</h2>
+        <p class="text-n-warm/80 text-lg leading-relaxed mb-10 max-w-xl mx-auto">From hand-rolled pasta and wood-fired pizza to fresh seafood and classic Italian desserts — every dish is prepared with the finest ingredients and a commitment to authentic flavor.</p>
+        <a href="{{ "/menu/" | url }}" class="btn-red">View Our Menu</a>
+      </div>
+
+      {# Mobile: bottom food image strip #}
+      <div class="md:hidden overflow-hidden flex-shrink-0" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+        <div class="flex gap-2 items-center" style="width: max-content; animation: marquee 22s linear 0s infinite reverse;">
+          <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
+          <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+        </div>
+      </div>
+
+    </div>
+
+  </section>
 
   {# ── Reviews ───────────────────────────────────────────────────── #}
   <section id="reviews" class="relative z-[20] py-20 overflow-hidden min-h-screen" style="background-image: url('{{ "/assets/images/bg-marble.jpg" | url }}'); background-size: cover; background-position: center;">
