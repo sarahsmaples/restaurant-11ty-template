@@ -109,18 +109,20 @@
 
   </head>
 
-  <body class="bg-n-black text-n-cream">
+  <body class="bg-n-black text-n-cream{% if bodyClass %} {{ bodyClass }}{% endif %}">
     {% include "components/header.njk" %}
     <main class="pt-20 pb-14 md:pb-0">
       {% block content %}{% endblock %}
     </main>
-    {% include "components/footer.njk" %}
+    {% if not hideFooter %}{% include "components/footer.njk" %}{% endif %}
     <script src="{{ "/assets/js/main.js" | url }}"></script>
 
-    <!-- Mobile sticky CTA bar -->
+    <!-- Mobile sticky CTA bar — index pages only -->
+    {% if showMobileCTA %}
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-n-border" style="background: rgba(10,10,10,0.97); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
       <a href="{{ "/#reservations" | url }}" class="flex-1 py-4 bg-n-red hover:bg-n-red-dark text-white text-xs tracking-[0.2em] uppercase font-semibold text-center transition-colors">Reservations</a>
       <a href="https://order.nittisnyc.com/nittis-italian-restaurant-new-york-city-ny/online_orders/new" target="_blank" rel="noopener noreferrer" class="flex-1 py-4 text-n-cream/80 hover:text-n-red text-xs tracking-[0.2em] uppercase font-semibold text-center transition-colors border-l border-n-border">Order Online</a>
     </div>
+    {% endif %}
   </body>
 </html>

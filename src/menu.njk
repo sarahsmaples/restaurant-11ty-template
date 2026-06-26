@@ -2,15 +2,14 @@
 title: Menu | Nittis Italian Restaurant & Bar | Hell's Kitchen, NYC
 description: Explore Nittis' full Italian menu — pasta, pizza, fresh seafood, classic Italian desserts, an extensive wine list, and craft cocktails in Hell's Kitchen, NYC.
 keywords: Nittis menu, Italian restaurant menu NYC, pasta menu Hell's Kitchen, Italian food Times Square, Nittis Italian menu
+hideFooter: true
+bodyClass: overflow-hidden
 ---
 
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  <section id="menu" class="text-center py-16">
-    <div class="max-w-2xl mx-auto px-4">
-      <h1 class="font-eurostile text-3xl md:text-5xl mb-10">Our Menu</h1>
-      <iframe src="https://m.emenu.me/#/2642e67fcfca4ec8a6f7cab1047a6bae/100" frameborder="0" width="100%" height="900"></iframe>
-    </div>
+  <section id="menu" class="text-center" style="height: 100vh;">
+    <iframe src='https://88restaurants.com/825/online_orders/frame' style='width: 100%;height: 100%;border:none;'></iframe>
   </section>
 {% endblock %}
