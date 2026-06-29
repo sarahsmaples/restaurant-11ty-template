@@ -8,14 +8,26 @@ showMobileCTA: true
 
 {% extends "layouts/base.njk" %}
 
+{% block head %}
+<style>
+  @media (min-width: 768px) {
+    #hero-wrapper-v3 { height: 200vh; }
+    #about { margin-top: -100vh; min-height: 250vh; }
+  }
+  @media (max-width: 767px) {
+    #hero-wrapper-v3 { height: 100vh; }
+  }
+</style>
+{% endblock %}
+
 {% block content %}
 
   {# ── Hero ──────────────────────────────────────────────────────── #}
-  <div id="hero-wrapper-v3" style="height: 200vh; margin-top: -5rem;">
+  <div id="hero-wrapper-v3" style="margin-top: -5rem;">
     <section id="hero-scroll-container" class="sticky top-0 z-[1] flex items-center justify-center overflow-hidden h-screen">
 
       {# Video background #}
-      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <video autoplay muted loop playsinline poster="{{ "/assets/images/exterior2.jpg" | url }}" class="absolute inset-0 w-full h-full object-cover">
         <source src="{{ "/assets/videos/hero.mp4" | url }}" type="video/mp4">
       </video>
 
@@ -31,7 +43,7 @@ showMobileCTA: true
 
   {# ── View Menu ─────────────────────────────────────────────────── #}
   {# ── About / Our Story — slides over hero as sticky card ─────────── #}
-  <section id="about" class="stack-panel sticky top-0 z-[11] bg-n-black overflow-hidden rounded-t-[20px]" style="margin-top: -100vh; min-height: 250vh; background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
+  <section id="about" class="stack-panel md:sticky top-0 z-[11] bg-n-black overflow-hidden md:rounded-t-[20px]" style="background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
 
     {# Left gallery column — owners + cigarette-machine, scroll-driven, drifts upward #}
     <div id="about-col-left" class="hidden md:flex flex-col justify-end gap-3 absolute left-0 top-0 w-[30%] h-screen pointer-events-none" aria-hidden="true"
@@ -54,15 +66,15 @@ showMobileCTA: true
     <div class="hidden md:block absolute right-0 w-[27%] h-[18vh] pointer-events-none z-[3]" aria-hidden="true" style="top: 82vh; background: linear-gradient(to top, #0a0a0a, transparent);"></div>
 
     {# Centered content #}
-    <div class="relative z-[2] h-screen flex flex-col items-center justify-center text-center px-6">
-      <div class="max-w-xl mx-auto space-y-6">
-        <h2 class="font-eurostile text-4xl md:text-6xl text-n-cream uppercase tracking-[0.2em]">Our Story</h2>
+    <div class="relative z-[2] h-screen flex flex-col items-center justify-center text-center px-6 pt-20 md:pt-0">
+      <div class="max-w-xl mx-auto space-y-3 md:space-y-6">
+        <h2 class="font-eurostile text-3xl sm:text-4xl md:text-6xl text-n-cream uppercase tracking-[0.2em]">Our Story</h2>
         <div class="section-rule"></div>
-        <p class="text-n-warm/75 text-lg leading-relaxed">A family legacy rooted in authenticity. Nittis is a Durollari family venture built on 38 years of Italian restaurant tradition — from Father Will's dedication to the craft, to sons Arben &amp; Kuj bringing the same eye for style that dressed Billie Eilish and Lil Nas X to the atmosphere at Nittis.</p>
-        <p class="text-n-warm/75 text-lg leading-relaxed">Perfectly situated in Hell's Kitchen, steps from Times Square, the Javits Center, and Madison Square Garden — where great food, warm hospitality, and genuine Italian spirit meet.</p>
+        <p class="text-n-warm/75 text-sm sm:text-base md:text-lg leading-relaxed">A family legacy rooted in authenticity. Nittis is a Durollari family venture built on 38 years of Italian restaurant tradition — from Father Will's dedication to the craft, to sons Arben &amp; Kuj bringing the same eye for style that dressed Billie Eilish and Lil Nas X to the atmosphere at Nittis.</p>
+        <p class="text-n-warm/75 text-sm sm:text-base md:text-lg leading-relaxed">Perfectly situated in Hell's Kitchen, steps from Times Square, the Javits Center, and Madison Square Garden — where great food, warm hospitality, and genuine Italian spirit meet.</p>
         <a href="{{ "/#reservations" | url }}" class="btn-red inline-block mt-2">Reserve a Table</a>
-        <div class="md:hidden mt-8">
-          <img src="{{ "/assets/images/owners.jpg" | url }}" alt="The Owners" class="w-full h-auto rounded-sm">
+        <div class="md:hidden mt-4">
+          <img src="{{ "/assets/images/owners.jpg" | url }}" alt="The Owners" class="w-[90%] h-auto mx-auto rounded-sm">
         </div>
       </div>
     </div>

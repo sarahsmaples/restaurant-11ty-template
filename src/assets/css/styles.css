@@ -929,6 +929,9 @@ video {
 .w-\[85\%\] {
   width: 85%;
 }
+.w-\[90\%\] {
+  width: 90%;
+}
 .w-auto {
   width: auto;
 }
@@ -1549,10 +1552,26 @@ video {
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+@media (min-width: 640px) {
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
 @media (min-width: 768px) {
 
   .md\:absolute {
     position: absolute;
+  }
+
+  .md\:sticky {
+    position: sticky;
   }
 
   .md\:bottom-0 {
@@ -1636,8 +1655,19 @@ video {
     flex-direction: row;
   }
 
+  .md\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+  }
+
   .md\:whitespace-nowrap {
     white-space: nowrap;
+  }
+
+  .md\:rounded-t-\[20px\] {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 
   .md\:p-14 {
@@ -1662,6 +1692,10 @@ video {
     padding-right: 5rem;
   }
 
+  .md\:pt-0 {
+    padding-top: 0px;
+  }
+
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1680,6 +1714,11 @@ video {
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 @media (min-width: 1024px) {
