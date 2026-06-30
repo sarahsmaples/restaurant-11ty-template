@@ -806,6 +806,9 @@ video {
 .grid {
   display: grid;
 }
+.contents {
+  display: contents;
+}
 .hidden {
   display: none;
 }
@@ -952,6 +955,9 @@ video {
 }
 .max-w-\[90vw\] {
   max-width: 90vw;
+}
+.max-w-none {
+  max-width: none;
 }
 .max-w-screen-lg {
   max-width: 1024px;

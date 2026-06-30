@@ -2,7 +2,7 @@
 title: Private Parties & Event Catering Near Hudson Yards | Nittis Italian Restaurant | NYC
 description: Host your next private party, corporate event, or catered gathering at Nittis Italian Restaurant & Bar — steps from Hudson Yards, Times Square & Madison Square Garden.
 keywords: private parties NYC, event catering Hudson Yards, private dining Hell's Kitchen, corporate events Midtown Manhattan, Italian catering NYC, private party restaurant NYC
-permalink: /private-parties-and-event-catering-near-hudson-yards/
+permalink: /private-parties-and-event-catering-near-hudson-yards.html
 ---
 
 {% extends "layouts/base.njk" %}
@@ -155,7 +155,7 @@ permalink: /private-parties-and-event-catering-near-hudson-yards/
 
       {# ── Interior photo ───────────────────────────────────────────── #}
       <div class="mb-16">
-        <img src="{{ "/assets/images/private-dining-thumbnail.jpg" | url }}" alt="Private dining room at Nittis Italian Restaurant, Hell's Kitchen NYC" class="w-full h-auto block">
+        {% image "/assets/images/private-dining-thumbnail.jpg", "Private dining room at Nittis Italian Restaurant, Hell's Kitchen NYC", "(max-width: 768px) 100vw, 768px", [400, 800, 1440], "contents", "w-full h-auto block" %}
       </div>
 
       {# ── Form card ────────────────────────────────────────────────── #}

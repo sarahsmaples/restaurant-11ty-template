@@ -35,7 +35,7 @@ showMobileCTA: true
       <div class="absolute inset-0 bg-black/50"></div>
 
       <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          <img src="{{ "/assets/images/logo-full.png" | url }}" alt="{{ client.name }}" class="mx-auto w-4/5 h-auto md:w-auto md:h-52" style="filter: invert(1);">
+          {% image "/assets/images/logo-full.png", client.name, "291px", [600, 1200], "contents", "mx-auto w-4/5 h-auto md:w-auto md:h-52 invert" %}
       </div>
 
     </section>
@@ -48,7 +48,7 @@ showMobileCTA: true
     {# Left gallery column — owners + cigarette-machine, scroll-driven, drifts upward #}
     <div id="about-col-left" class="hidden md:flex flex-col justify-end gap-3 absolute left-0 top-0 w-[30%] h-screen pointer-events-none" aria-hidden="true"
       style="will-change: transform;">
-      <img src="{{ "/assets/images/owners.jpg" | url }}" alt="" class="w-full h-auto flex-shrink-0">
+      {% image "/assets/images/owners.jpg", "", "30vw", [500, 1000], "contents", "w-full h-auto flex-shrink-0" %}
       <img src="{{ "/assets/images/cigarette-machine.jpg" | url }}" alt="" class="w-[60%] h-auto flex-shrink-0 self-start">
     </div>
 
@@ -74,7 +74,7 @@ showMobileCTA: true
         <p class="text-n-warm/75 text-sm sm:text-base md:text-lg leading-relaxed">Perfectly situated in Hell's Kitchen, steps from Times Square, the Javits Center, and Madison Square Garden — where great food, warm hospitality, and genuine Italian spirit meet.</p>
         <a href="{{ "/#reservations" | url }}" class="btn-red inline-block mt-2">Reserve a Table</a>
         <div class="md:hidden mt-4">
-          <img src="{{ "/assets/images/owners.jpg" | url }}" alt="The Owners" class="w-[90%] h-auto mx-auto rounded-sm">
+          {% image "/assets/images/owners.jpg", "The Owners", "90vw", [400, 800], "contents", "w-[90%] h-auto mx-auto rounded-sm" %}
         </div>
       </div>
     </div>
@@ -119,10 +119,10 @@ showMobileCTA: true
 
       {# Photo + hanging content card #}
       <div class="relative max-w-3xl mx-auto text-left md:pr-20">
-        <img src="{{ "/assets/images/private-dining-thumbnail.jpg" | url }}" alt="Private dining at Nittis Italian Restaurant" class="w-full h-auto block">
+        {% image "/assets/images/private-dining-thumbnail.jpg", "Private dining at Nittis Italian Restaurant", "(max-width: 768px) 100vw, 768px", [400, 800, 1440], "contents", "w-full h-auto block" %}
         <div class="md:absolute md:bottom-0 md:right-0 border border-n-gold/30 p-8 space-y-5 md:w-80" style="background: #1a1212;">
           <p class="text-white text-base leading-relaxed">Steps from the Javits Center, Hudson Yards, and Madison Square Garden — Nittis is Hell's Kitchen's go-to for corporate dinners, conference groups, and private celebrations. Up to 90 seated or 200 for cocktail hour. Fully customizable menus. We'll handle the rest.</p>
-          <a href="{{ "/private-parties-and-event-catering-near-hudson-yards/" | url }}" class="text-n-red hover:text-n-cream text-sm tracking-[0.2em] uppercase transition-colors border-b border-n-red/40 pb-px inline-block">Plan Your Event &rarr;</a>
+          <a href="{{ "/private-parties-and-event-catering-near-hudson-yards.html" | url }}" class="text-n-red hover:text-n-cream text-sm tracking-[0.2em] uppercase transition-colors border-b border-n-red/40 pb-px inline-block">Plan Your Event &rarr;</a>
         </div>
       </div>
 
@@ -133,20 +133,20 @@ showMobileCTA: true
           <div class="logo-marquee flex gap-16 items-center" style="width: max-content; animation: marquee 28s linear infinite;">
             <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="Salesforce" class="h-12 w-auto object-contain opacity-50">
             <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="Deloitte" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="Disney" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="Pfizer" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="CNN" class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="Warner Bros." class="h-12 w-auto object-contain opacity-50">
-            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="Bombas" class="h-12 w-auto object-contain opacity-50">
+            {% image "/assets/images/company-logos/disney.png", "Disney", "120px", [120, 240], "contents", "h-12 w-auto object-contain opacity-50" %}
+            {% image "/assets/images/company-logos/pfizer.png", "Pfizer", "120px", [120, 240], "contents", "h-12 w-auto object-contain opacity-50" %}
+            {% image "/assets/images/company-logos/cnn.webp", "CNN", "110px", [110, 220], "contents", "h-12 w-auto object-contain opacity-50" %}
+            {% image "/assets/images/company-logos/warner-bros.png", "Warner Bros.", "50px", [50, 100], "contents", "h-12 w-auto object-contain opacity-50" %}
+            {% image "/assets/images/company-logos/bombas.png", "Bombas", "120px", [120, 240], "contents", "h-12 w-auto object-contain opacity-50" %}
             <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="Betterment" class="h-12 w-auto object-contain opacity-50">
             {# Duplicate set for seamless loop #}
             <img src="{{ "/assets/images/company-logos/salesforce.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
             <img src="{{ "/assets/images/company-logos/deloitte.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/disney.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/pfizer.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/cnn.webp" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/warner-bros.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
-            <img src="{{ "/assets/images/company-logos/bombas.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
+            {% image "/assets/images/company-logos/disney.png", "", "120px", [120, 240], "contents", "h-12 w-auto object-contain opacity-50" %}
+            {% image "/assets/images/company-logos/pfizer.png", "", "120px", [120, 240], "contents", "h-12 w-auto object-contain opacity-50" %}
+            {% image "/assets/images/company-logos/cnn.webp", "", "110px", [110, 220], "contents", "h-12 w-auto object-contain opacity-50" %}
+            {% image "/assets/images/company-logos/warner-bros.png", "", "50px", [50, 100], "contents", "h-12 w-auto object-contain opacity-50" %}
+            {% image "/assets/images/company-logos/bombas.png", "", "120px", [120, 240], "contents", "h-12 w-auto object-contain opacity-50" %}
             <img src="{{ "/assets/images/company-logos/betterment.png" | url }}" alt="" class="h-12 w-auto object-contain opacity-50" aria-hidden="true">
           </div>
         </div>
@@ -161,27 +161,27 @@ showMobileCTA: true
     {# Left gallery column — auto-scrolls upward continuously #}
     <div class="hidden md:flex flex-col absolute left-0 top-0 w-[26%] pointer-events-none" aria-hidden="true"
       style="will-change:transform; animation: gallery-up 22s linear infinite; mask-image: linear-gradient(to right,black 65%,transparent 100%); -webkit-mask-image: linear-gradient(to right,black 65%,transparent 100%);">
-      <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      {% image "/assets/images/lasagna.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/chicken-parmigana.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/steak-frites.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/salmon-oreganata.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/lasagna.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/chicken-parmigana.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/steak-frites.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/salmon-oreganata.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
     </div>
 
     {# Right gallery column — auto-scrolls downward continuously (opposite direction) #}
     <div class="hidden md:flex flex-col absolute right-0 top-0 w-[26%] pointer-events-none" aria-hidden="true"
       style="will-change:transform; animation: gallery-down 28s linear infinite; mask-image: linear-gradient(to left,black 65%,transparent 100%); -webkit-mask-image: linear-gradient(to left,black 65%,transparent 100%);">
-      <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0">
-      <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
-      <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="w-full h-[40vh] object-cover opacity-90 flex-shrink-0" aria-hidden="true">
+      {% image "/assets/images/frutta-di-mare.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/shakshuka.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/steak-frites.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/chicken-parmigana.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/frutta-di-mare.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/shakshuka.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/steak-frites.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
+      {% image "/assets/images/chicken-parmigana.jpg", "", "26vw", [400, 800], "contents", "w-full h-[40vh] object-cover opacity-90 flex-shrink-0" %}
     </div>
 
     {# Gradient overlays #}
@@ -196,14 +196,14 @@ showMobileCTA: true
       {# Mobile: top food image strip #}
       <div class="md:hidden overflow-hidden flex-shrink-0" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
         <div class="flex gap-2 items-center" style="width: max-content; animation: marquee 18s linear infinite;">
-          <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/lasagna.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/salmon-oreganata.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          {% image "/assets/images/lasagna.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/chicken-parmigana.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/steak-frites.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/salmon-oreganata.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/lasagna.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/chicken-parmigana.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/steak-frites.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/salmon-oreganata.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
         </div>
       </div>
 
@@ -212,20 +212,20 @@ showMobileCTA: true
         <span class="section-label">Authentic Italian Cuisine</span>
         <h2 class="font-eurostile text-4xl md:text-7xl text-n-cream uppercase tracking-[0.3em] md:whitespace-nowrap max-w-[90%] mx-auto mb-6">Our Passion</h2>
         <p class="text-n-warm/80 text-lg leading-relaxed mb-10 max-w-xl mx-auto">From hand-rolled pasta and wood-fired pizza to fresh seafood and classic Italian desserts — every dish is prepared with the finest ingredients and a commitment to authentic flavor.</p>
-        <a href="{{ "/menu/" | url }}" class="btn-red">View Our Menu</a>
+        <a href="{{ "/menus.html" | url }}" class="btn-red">View Our Menu</a>
       </div>
 
       {# Mobile: bottom food image strip #}
       <div class="md:hidden overflow-hidden flex-shrink-0" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
         <div class="flex gap-2 items-center" style="width: max-content; animation: marquee 22s linear 0s infinite reverse;">
-          <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0">
-          <img src="{{ "/assets/images/frutta-di-mare.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/shakshuka.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/steak-frites.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
-          <img src="{{ "/assets/images/chicken-parmigana.jpg" | url }}" alt="" class="h-36 w-auto object-cover flex-shrink-0" aria-hidden="true">
+          {% image "/assets/images/frutta-di-mare.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/shakshuka.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/steak-frites.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/chicken-parmigana.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/frutta-di-mare.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/shakshuka.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/steak-frites.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
+          {% image "/assets/images/chicken-parmigana.jpg", "", "216px", [220, 440], "contents", "h-36 w-auto object-cover flex-shrink-0" %}
         </div>
       </div>
 
@@ -315,7 +315,7 @@ showMobileCTA: true
 
 
   {# ── Reservations ──────────────────────────────────────────────── #}
-  <section id="reservations" class="relative z-[20] overflow-hidden" style="background-image: url('{{ "/assets/images/reservation-thumbnail.jpg" | url }}'); background-size: cover; background-position: center;">
+  <section id="reservations" class="relative z-[20] overflow-hidden" style="background-image: url('{% imageUrl "/assets/images/reservation-thumbnail.jpg" %}'); background-size: cover; background-position: center;">
     <div class="absolute inset-0 bg-n-black/60"></div>
     <div class="relative z-10 py-20 px-6">
       <div class="mx-auto" style="max-width: 900px;">
@@ -328,8 +328,8 @@ showMobileCTA: true
             <h2 class="section-heading text-left">Reservations</h2>
             <div class="w-10 h-px bg-n-red mt-5 mb-10"></div>
             <p class="hidden md:block text-white text-lg leading-relaxed mb-6">Whether you're planning a special occasion or a night out, we'd love to have you. Use the widget to reserve your seat for parties of up to 10.</p>
-            <p class="hidden md:block text-white text-lg leading-relaxed">Planning something bigger? Visit our <a href="{{ "/private-parties-and-event-catering-near-hudson-yards/" | url }}" class="text-n-red hover:text-n-cream transition-colors border-b border-n-red/40 pb-px">Events &amp; Private Dining</a> page to submit a group inquiry.</p>
-            <p class="md:hidden text-white text-lg leading-relaxed">Reserve your table below, or visit our <a href="{{ "/private-parties-and-event-catering-near-hudson-yards/" | url }}" class="text-n-red hover:text-n-cream transition-colors border-b border-n-red/40 pb-px">Events &amp; Private Dining</a> page if you're planning a large gathering.</p>
+            <p class="hidden md:block text-white text-lg leading-relaxed">Planning something bigger? Visit our <a href="{{ "/private-parties-and-event-catering-near-hudson-yards.html" | url }}" class="text-n-red hover:text-n-cream transition-colors border-b border-n-red/40 pb-px">Events &amp; Private Dining</a> page to submit a group inquiry.</p>
+            <p class="md:hidden text-white text-lg leading-relaxed">Reserve your table below, or visit our <a href="{{ "/private-parties-and-event-catering-near-hudson-yards.html" | url }}" class="text-n-red hover:text-n-cream transition-colors border-b border-n-red/40 pb-px">Events &amp; Private Dining</a> page if you're planning a large gathering.</p>
           </div>
 
           {# Right: widget #}

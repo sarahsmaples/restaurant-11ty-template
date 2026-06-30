@@ -1,0 +1,30 @@
+---
+title: Gift Cards | Nittis Italian Restaurant & Bar | Hell's Kitchen, NYC
+description: Give the gift of an unforgettable Italian dining experience. Purchase a Nittis gift card — perfect for birthdays, anniversaries, and corporate gifts.
+keywords: Nittis gift cards, Italian restaurant gift card NYC, Hell's Kitchen restaurant gift card
+permalink: /giftcards.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <section id="gift-cards" class="bg-n-black overflow-hidden min-h-screen flex items-center" style="background-image: url('{{ "/assets/images/subtle-texture.png" | url }}');">
+    <div class="max-w-screen-xl mx-auto px-6 py-20 w-full">
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+
+        <a href="https://88restaurants.com/825/gift_cards/new" target="_blank" rel="noopener noreferrer" class="group hidden md:block">
+          <img src="{{ "/assets/images/gift-card.png" | url }}" alt="Nittis Italian Restaurant Gift Card" class="w-full max-w-sm mx-auto transition-transform duration-500 group-hover:scale-105">
+        </a>
+
+        <div class="space-y-6">
+          <span class="section-label">For Any Occasion</span>
+          <h2 class="section-heading">Gift Cards</h2>
+          <div class="w-10 h-px bg-n-red mt-5 mb-2"></div>
+          <p class="text-n-warm/75 text-lg leading-relaxed">Give the gift of an unforgettable Italian dining experience. Nittis gift cards are perfect for birthdays, anniversaries, corporate gifts, or any occasion worth celebrating — redeemable for food, drinks, and more.</p>
+          <a href="https://88restaurants.com/825/gift_cards/new" target="_blank" rel="noopener noreferrer" class="btn-red inline-block">Purchase a Gift Card</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{% endblock %}
